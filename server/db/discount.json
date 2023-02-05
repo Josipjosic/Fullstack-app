@@ -1,0 +1,26 @@
+{
+    "discount":
+ 
+    [
+         {
+            "discount": 20,
+            "age": "0-20"
+         },
+         {
+            "discount": 10,
+            "age": "20-30"
+         },
+         {
+            "discount": 5,
+            "age": "30-40"
+         },
+         {
+            "discount": 2,
+            "age": "40-60"
+         },
+         {
+            "discount": 0,
+            "age": "60-200"
+         }
+     ]
+ }

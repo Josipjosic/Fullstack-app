@@ -1,0 +1,41 @@
+.create-content {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+.create-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+.btn-create {
+  padding: 10px;
+  text-decoration: none;
+  border: 2px solid rgb(196, 196, 196);
+  box-shadow: 5px 5px 5px #0000;
+  margin-top: 30px;
+  border-radius: 15px;
+  margin-left: 430px;
+}
+.btn-create:hover {
+  background-color: rgb(88, 0, 74);
+  color: white;
+  cursor: pointer;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+.form-group input {
+  border: 1px solid rgb(175, 172, 172);
+  padding: 10px;
+  border-radius: 15px;
+}

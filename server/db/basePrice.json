@@ -1,0 +1,30 @@
+{
+   "bpj":
+
+   [
+        {
+            "amount": 1000,
+            "city": "Zagreb"
+        },
+        {
+            "amount": 950,
+            "city": "Split"
+        },
+        {
+            "amount": 900,
+            "city": "Rijeka"
+        },
+        {
+            "amount": 900,
+            "city": "Osijek"
+        },
+        {
+            "amount": 800,
+            "city":"Zadar"
+        },
+        {
+            "amount": 700,
+            "city": "other"
+        }
+    ]
+}

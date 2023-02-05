@@ -1,0 +1,68 @@
+.details-content {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.details-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+.user-detail {
+  font-size: 18px;
+}
+.user-detail span {
+  font-weight: bolder;
+}
+.details-p span {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.btn-link button {
+  margin-bottom: 100px;
+  padding: 10px;
+  text-decoration: none;
+  border: 2px solid rgb(196, 196, 196);
+  box-shadow: 5px 5px 5px #0000;
+  border-radius: 15px;
+}
+
+.btn-link button:hover{
+  cursor: pointer;
+  color: rgb(88, 0, 74);
+  border: 2px solid rgb(88, 0, 74);
+}
+
+.btn-edit button {
+  position: absolute;
+  bottom: 470px;
+  right: inherit;
+  padding: 10px;
+  text-decoration: none;
+  border: 2px solid rgb(196, 196, 196);
+  box-shadow: 5px 5px 5px #0000;
+  border-radius: 15px;
+}
+
+.btn-delete {
+  bottom: 470px;
+  right: inherit;
+  padding: 10px;
+  text-decoration: none;
+  border: 2px solid rgb(196, 196, 196);
+  box-shadow: 5px 5px 5px #0000;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+.btn-delete:hover {
+    background-color: rgb(88, 0, 74);
+    color: white;
+    cursor: pointer;
+}
+.btn-edit button:hover {
+  cursor: pointer;
+  color: rgb(88, 0, 74);
+  border: 2px solid rgb(88, 0, 74);
+}
