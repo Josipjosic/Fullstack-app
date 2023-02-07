@@ -27,7 +27,7 @@ const User = ({ user }) => (
 export default function UserList() {
   const [users, setUsers] = useState([]);
 
-  // This method fetches the records from the database.
+  // This method fetches the users from the database.
   useEffect(() => {
     async function getUsers() {
       const response = await fetch(`http://localhost:5000/user/`);
@@ -49,14 +49,14 @@ export default function UserList() {
 
   console.log(users);
 
-  // This method will map out the records on the table
+  // This method will map out the users on the table
   function userList() {
     return users.map((user) => {
       return <User user={user} key={user._id} />;
     });
   }
 
-  // This following section will display the table with the records of individuals.
+  // This following section will display the table with the data of individuals.
   return (
     <div className="list-content">
       <h3 className="list-title">User List</h3>

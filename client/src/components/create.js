@@ -23,7 +23,7 @@ export default function Create() {
   async function onSubmit(e) {
     e.preventDefault();
 
-    // When a post request is sent to the create url, we'll add a new record to the database.
+    // When a post request is sent to the create url, we'll add a new user to the database.
     const newUser = { ...form };
 
     await fetch("http://localhost:5000/user/add", {

@@ -1,7 +1,7 @@
 const express = require("express");
 // recordRoutes is an instance of the express router.
 // We use it to define our routes.
-// The router will be added as a middleware and will take control of requests starting with path /record.
+// The router will be added as a middleware and will take control of requests starting with path /user.
 const recordRoutes = express.Router();
 
 // This will help us connect to the database
@@ -21,7 +21,7 @@ let age = 0;
 let discount = 0;
 let inscurance = 0;
 
-// This section will help you get a list of all the records.
+// This section will help you get a list of all the users.
 recordRoutes.route("/user").get(function (req, res) {
   let db_connect = dbo.getDb("users");
   db_connect
@@ -33,7 +33,7 @@ recordRoutes.route("/user").get(function (req, res) {
     });
 });
 
-// This section will help you get a single record by id
+// This section will help you get a single user by id
 recordRoutes.route("/user/:id").get(function (req, res) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };
@@ -66,23 +66,22 @@ recordRoutes.route("/user/:id").get(function (req, res) {
 });
 
 recordRoutes.route("/user/:id/insc").get(function (req, res) {
-  if (age > 0 && age < 21) {
-    discount = disc.discount[0].discount;
-  } else if (age > 20 && age <= 30) {
-    discount = disc.discount[1].discount;
-  } else if (age >= 30 && age <= 40) {
-    discount = disc.discount[2].discount;
-  } else if (age >= 40 && age <= 60) {
-    discount = disc.discount[3].discount;
-  } else if (age >= 60 && age <= 200) {
-    discount = disc.discount[4].discount;
+  for (let i = 0; i < disc.discount.length; i++) {
+    for (let value of Object.values(disc.discount[i])) {
+      val1 = value[0] + value[0];
+      for (let g = 0; g <= age; g++) {
+        if (g >= val1) {
+          discount = disc.discount[i].discount;
+        }
+      }
+    }
   }
   let calcs = basePrice + (basePrice * discount) / 100;
   inscurance = calcs;
   res.status(200).json(inscurance);
 });
 
-// This section will help you create a new record.
+// This section will help you create a new user.
 recordRoutes.route("/user/add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myobj = {
@@ -98,7 +97,7 @@ recordRoutes.route("/user/add").post(function (req, response) {
   });
 });
 
-// This section will help you update a record by id.
+// This section will help you update a user by id.
 recordRoutes.route("/edit/:id").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };
@@ -120,7 +119,7 @@ recordRoutes.route("/edit/:id").post(function (req, response) {
     });
 });
 
-// This section will help you delete a record
+// This section will help you delete a user
 recordRoutes.route("/:id").delete((req, response) => {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };

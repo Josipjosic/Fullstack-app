@@ -36,7 +36,7 @@ export default function UserList() {
   const params = useParams();
   const navigate = useNavigate();
 
-  // This method fetches the records from the database.
+  // This method fetches the users from the database.
   useEffect(() => {
     async function getUsers() {
       const response = await fetch(
@@ -57,7 +57,7 @@ export default function UserList() {
     return;
   }, [user.length, params.id, insurance]);
 
-  // This method fetches the records from the database with inscurance.
+  // This method fetches the users from the database with inscurance.
   async function getIns() {
     const res = await fetch(
       `http://localhost:5000/user/${params.id.toString()}/insc`,
@@ -73,6 +73,7 @@ export default function UserList() {
     }
     const insurance = await res.json();
     setInsurance(insurance);
+    console.log(insurance)
   }
 
   async function deleteRecord(id) {
@@ -87,14 +88,14 @@ export default function UserList() {
 
   console.log(user);
 
-  // This method will map out the records on the table
+  // This method will map out the users on the table
   function userList() {
     return user.map((user) => {
       return <User user={user} key={user._id} />;
     });
   }
 
-  // This following section will display the table with the records of individuals.
+  // This following section will display the table with the data of individuals.
   return (
     <div className="details-content">
       <h3 className="details-title">User Details</h3>
