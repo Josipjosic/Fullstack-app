@@ -44,24 +44,17 @@ recordRoutes.route("/user/:id").get(function (req, res) {
     let year = data.getFullYear();
     dob = year;
     age = currYear - dob;
-    bp.bpj.map((data) => {
-      if (result.city === data.city) {
-        basePrice = data.amount;
-      } else if (
-        !result.city.includes("Zadar") &&
-        !result.city.includes("zadar") &&
-        !result.city.includes("Zagreb") &&
-        !result.city.includes("zagreb") &&
-        !result.city.includes("Osijek") &&
-        !result.city.includes("osijek") &&
-        !result.city.includes("Rijeka") &&
-        !result.city.includes("rijeka") &&
-        !result.city.includes("Split") &&
-        !result.city.includes("split")
-      ) {
+    for (let i = 0; i < bp.bpj.length; i++) {
+      let lowerCase1 =`${result.city}`.toLowerCase();
+      let lowerCase2 = bp.bpj[i].city.toLowerCase();
+      if (lowerCase1 === lowerCase2) {
+        basePrice = bp.bpj[i].amount;
+        break;
+      }
+      else {
         basePrice = 700;
       }
-    });
+    }
   });
 });
 
